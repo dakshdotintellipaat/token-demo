@@ -1,0 +1,16 @@
+1) Set hostname for all the nodes
+Login to master node and set hostname via hostnamectl command,
+$ sudo hostnamectl set-hostname "k8master.example.com"	
+							// on master node
+$ exec bash
+On the worker nodes, run
+$ sudo hostnamectl set-hostname "k8worker1.example.com" 
+							// 1st worker node
+$ sudo hostnamectl set-hostname "k8worker2.example.com" 
+							// 2nd worker node
+$ exec bash
+Add the IP and hostname lines in /etc/hosts file on each node
+Note: below entries are as per my servers ip and domain addresses.
+192.168.1.173   k8master.example.com k8master
+192.168.1.174   k8worker1.example.com k8worker1
+192.168.1.175   k8worker2.example.com k8worker2
